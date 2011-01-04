@@ -48,7 +48,7 @@ begin
 	if response.error?
 		raise response.error
 	else
-		Syslog.log(Syslog::LOG_INFO, "Updated DNS record for cn='#{cn}' with ip='#{ip}'.")
+		Syslog.log(Syslog::LOG_INFO, "Updated A DNS record for cn='#{cn}' with ip='#{ip}'.")
 	end
 
 	# v (vendor) = onoclea
@@ -60,7 +60,7 @@ begin
 	if response.error?
 		raise response.error
 	else
-		Syslog.log(Syslog::LOG_INFO, "Updated DNS record for cn='#{cn}' with ip='#{ip}'.")
+		Syslog.log(Syslog::LOG_INFO, "Updated TXT DNS record for cn='#{cn}' with ip='#{ip}'.")
 	end
 rescue Exception => e
 	Syslog.log(Syslog::LOG_INFO, "Failed to update DNS for cn='#{cn}' with ip='#{ip}': '#{e.to_s}'")
