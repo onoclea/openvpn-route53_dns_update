@@ -26,6 +26,10 @@ begin
 		
 	conn = Route53::Connection.new(aws_access_key_id, aws_secret_access_key)
 
+	if conn.nil?
+		raise "Unable to connect to the Amazon Web Services."
+	end
+
 	zone = conn.get_zones(domain).first
 
 	if zone.nil?
